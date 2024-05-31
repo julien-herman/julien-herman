@@ -1,24 +1,217 @@
 <!DOCTYPE html>
-<html>
- <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title></title>
-      <script>
-         // load Branch
-         (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
-         // init Branch
-         branch.init('key_live_lpXs6FihojdiJasD3T8h6ffguChBjOyb');
-      </script>
-   </head>
-<body>
+<html><head>
+    <meta name="deepview-service" content="deepview-service" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
+    <script>
+       // load Branch
+       (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
+       // init Branch
+       branch.init('key_live_lpXs6FihojdiJasD3T8h6ffguChBjOyb');
+    </script>
+    <style>
+      body {
+        margin: 0;
+        word-wrap: break-word;
+        background-color:#F2F3F7
+      }
+      .container {
+        height: 100%;
+        min-height:480px;
+        min-width:280px;
+      }
+      /* ============ Portrait ============ */
+      .frame-container {
+        width: 640px;
+        height: 480px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .card {
+        position: relative;
+        margin: 0;
+        border-radius: 32px;
+        background-color:#FFF;
+        -webkit-box-shadow: 8px 16px 32px rgb(35 58 79 / 35%), 20px 30px 80px rgb(73 73 93 / 40%);
+        -moz-box-shadow: 8px 16px 32px rgba(35, 58, 79, 0.35), 20px 30px 80px rgba(73, 73, 93, 0.4);
+        box-shadow: 8px 16px 32px rgb(35 58 79 / 35%), 20px 30px 80px rgb(73 73 93 / 40%);
+        padding: 0;
+        z-index: 100;
+        width: 236px;
+        height: 480px;
+        overflow: hidden;
+        outline: 5px solid #f7f7f780;
+        float: left;
+      }
+      .card-container:after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 167px;
+        z-index: 1;
+      }
+      .card-container {
+        padding: 0 2px;
+        margin: 0;
+      }
+      .main-image {
+        width: 100px;
+        height: 100px;
+        background-image: url(https://www.effiliation.com/wp-content/uploads/2018/10/test.png);
+        background-size: cover;
+        background-position: top center;
+        margin: 96px auto 36px auto;
+        background-color: #06122F;
+        border-radius: 16px;
+        color: #FFF;
+        -webkit-box-shadow: 3px 4px 12px rgba(127, 127, 142, 0.4);
+        -moz-box-shadow: 3px 4px 12px rgba(127, 127, 142, 0.4);
+        box-shadow: 3px 4px 12px rgb(127 127 142 / 40%);
+        position: relative;
+        z-index: 2;
+      }
+      .main-image-qr-cont {
+        width: 120px;
+        height: 120px;
+        background-size: cover;
+        background-position: top center;
+        margin: 0 auto 36px auto;
+        border-radius: 16px;
+        color: #FFF;
+        position: relative;
+        z-index: 2;
+      }
+      .main-image-qr {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAYAAAB1PADUAAAAAklEQVR4AewaftIAAATZSURBVO3BQY4bSRAEwfAC//9l3znmqYBGJ0crIczwR6qWnFQtOqladFK16KRq0UnVopOqRSdVi06qFp1ULTqpWnRSteikatFJ1aKTqkUnVYs+eQnIb1JzA2RScwNkUnMD5JvUTEB+k5o3TqoWnVQtOqla9MkyNZuA3AB5Asik5g01N0Bu1DyhZhOQTSdVi06qFp1ULfrky4A8oeYJNTdAJjUTkEnNBGSTmgnIpOYJIE+o+aaTqkUnVYtOqhZ98o8BcgPkBsiNmjeA/MtOqhadVC06qVr0yV8OyBNqJiCbgDyh5l9yUrXopGrRSdWiT75MzTepuQEyAblRcwNkUvMnqfk/OaladFK16KRq0SfLgPwmIJOaGzUTkBsgk5oJyKRmAjKpmYBMam6A/J+dVC06qVp0UrUIf+QfAmSTmgnIpGYCMqmZgExq/iUnVYtOqhadVC365CUgk5oJyKRmAjKpmYBMam7UvAHkm9RsAjKpuQEyqdl0UrXopGrRSdUi/JFFQDapmYDcqJmA3KiZgExqvgnIE2pugExqboBMat44qVp0UrXopGrRJ8vUbAJyo+abgExqngAyqZnUTEBugNyomYD8ppOqRSdVi06qFuGPvADkCTU3QCY1E5DfpGYCsknNBGRSMwG5UXMDZFKz6aRq0UnVopOqRfgjXwTkRs0NkEnNBGRSMwGZ1ExAJjUTkDfU3ACZ1ExAbtRMQCY1E5AbNW+cVC06qVp0UrUIf+QXAblR8wSQGzWbgNyoeQLIG2omIJOaGyCTmjdOqhadVC06qVr0yUtAnlDzBJBJzY2aN4BMaiY1E5AJyKTmRs0EZFIzAXkDyDedVC06qVp0UrXok2VqNqmZgExqJiCTmgnIjZpvAvIEkBsgb6jZdFK16KRq0UnVok+WAZnUTEBu1ExAJjU3am7UTEDeUDMB+SY1N0CeADKpeeOkatFJ1aKTqkWfvKRmAjIBmdTcAJnUvAFkUnMDZFIzAblRc6PmCSBvAJnUTEA2nVQtOqladFK16JOXgExqboBMam6A3KiZgNwAmdTcAJnUTEAmIDdqJiCb1NwA+aaTqkUnVYtOqhZ98pKaCciNmgnIpGaTmhsgvwnIE2omIJOaCcik5kbNppOqRSdVi06qFuGPvABkUjMBeULNBGRScwPkRs0EZFIzAZnU3AC5UTMB2aTmTzqpWnRSteikatEnL6m5UfOGmhsgk5oJyARkUrNJzRtqngByA+QJNW+cVC06qVp0UrXok5eA/CY1k5oJyKRmAnIDZFLzBJBJzQTkCSCTmhsgk5oJyDedVC06qVp0UrXok2VqNgF5A8gTap4AcgNkUjMBuVGzSc0EZNNJ1aKTqkUnVYs++TIgT6h5AsgbQCY1m9Q8AeQNNTdAvumkatFJ1aKTqkWf/OXUTEAmNU8AmdS8AWRSc6PmCSA3QH7TSdWik6pFJ1WLPvnLAZnU3AB5Asik5k8CcgNkUnMDZNNJ1aKTqkUnVYs++TI136RmAnKj5gkgE5A/Sc0bQCY1m06qFp1ULTqpWvTJMiC/CcikZgKySc0bQG6A3Ki5ATKpuQEyqXnjpGrRSdWik6pF+CNVS06qFp1ULTqpWnRSteikatFJ1aKTqkUnVYtOqhadVC06qVp0UrXopGrRSdWik6pF/wFibStl+sTOAQAAAABJRU5ErkJggg==);
+        background-size: contain;
+        background-position: center center;
+        position: relative;
+        z-index:3;
+        width: 100%;
+        height: 100%;
+      }
+      #content-container {
+        box-sizing: border-box;
+        margin: 0 22px 0 22px;
+        text-align: center;
+      }
+      .app-title {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight:600;
+        font-family: "Source Sans Pro", Helvetica, serif;
+        line-height: 16px;
+        margin-bottom: 8px;
+        color: #9EA2A7;
+        letter-spacing: 0.4px;
+      }
+      .card-title {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: "Source Sans Pro", Helvetica, serif;
+        line-height: 24px;
+        margin-bottom: 8px;
+        color: #06122F;
+      }
+      .app-content {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: "Source Sans Pro", Helvetica, serif;
+        line-height: 16px;
+        margin-bottom: 8px;
+        color: #333E48;
+      }
+      .cont {
+        width: 278px;
+        float: right;
+      }
+      .header-title {
+        font-size: 36px;
+        font-weight: 600;
+        font-family: "Source Sans Pro", Helvetica, serif;
+        line-height: 40px;
+        margin: 75px 0 24px 0;
+        color: #06122F;
+        text-align: center
+      }
+      .divor {
+        text-align:center;
+        height: 2px;
+        background-color: #E0E6EC;
+        margin: 0 auto 27px auto;
+        position: relative;
+      }
+      .divor span{
+        color: #333E48;
+        font-size: 12px;
+        font-weight: 600;
+        font-family: "Source Sans Pro", Helvetica, serif;
+        background-color: #f2f3f7;
+        padding: 4px;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translate(-50%,0);
+      }
+      .btn-container a img {
+        margin: 0;
+        width: 100%;
+      }
+      .btn-container a:last-child{
+        margin:0;
+        float: right;
+      }
+      .btn-container a {
+        width: 133px;
+        float: left;
+      }
+      .btn-container a img {
+        margin: 0;
+        width: 100%;
+      }
+      .btn-container a:last-child{
+        margin:0;
+        float: right;
+      }
+      .btn-container a {
+        width: 133px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="frame-container">
 
-<iframe
-  id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="300"
-  height="200"
-  src="https://www.qatarairways.com/en-gb/homepage.html">
-</iframe>
+        <div class="card center">
+          <div class="card-container">
+            <div class="main-image">
+            </div>
+            <div id="content-container">
+              <div class="app-title">LUZlink [Test]</div>
+              <div class="card-title">Teste DM</div>
+            </div>
+          </div>
+        </div>
 
-</body>
-</html>
+        <div class="cont">
+          <div class="header-title">Scan to download<br />the app</div>
+          <div class="main-image-qr-cont">
+            <div class="main-image-qr"></div>
+          </div>
+          <div class="divor"><span>OR</span></div>
+          <div class="btn-container">
+            <a href="https://apps.apple.com/app/id1300705956"><img src="https://cdn.branch.io/branch-assets/1659570097391-og_image.png" /></a>
+            <a href="https://play.google.com/store/apps/details?id=luzlink.pt.hluz.services2"><img src="https://cdn.branch.io/branch-assets/1659570137910-og_image.png" /></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</body></html>
